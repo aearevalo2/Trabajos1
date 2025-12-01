@@ -1,26 +1,27 @@
 // Clase padre
-class Animal {
-  sonar() {
-    console.log("El animal hace un sonido.");
+class Estudiante {
+
+  agregarNota(promedio: number, nuevaNota: number): number {
+    return (promedio + nuevaNota ) / 2;
+
   }
-}
-//Clase hija
-class Perro extends Animal {
-  sonar() {
-    console.log("El perro ladra: ¡Guau guau");
+   
+  aprobar(nota: number, minima: number): boolean{
+    return nota >= minima;
   }
-}
-//Clase hija
-class Gato extends Animal {
-  sonar() {
-    console.log("El gato maúlla: ¡Miau miau");
+
+  calcularfaltas(faltasActuales: number , nuevas: number): number{
+    return faltasActuales + nuevas;
   }
 }
 
-const miAnimal = new Animal();
-const miPerro = new Perro();
-const miGato = new Gato();
+const estudiante = new Estudiante();
 
-miAnimal.sonar(); 
-miPerro.sonar();  
-miGato.sonar();  
+let promedio = estudiante.agregarNota(8, 6);
+console.log("Nuevo promedio:" , promedio);
+
+let aprueba = estudiante.aprobar(promedio, 7);
+console.log("Aprueba" , aprueba);
+
+let faltas = estudiante.calcularfaltas(3, 4);
+console.log("Total faltas:" , faltas);
